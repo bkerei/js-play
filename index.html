@@ -18,23 +18,32 @@
     </style>
 </head>
 
-<body>
 
+<body>
+ <!-- //canvas = canvas component -->
     <canvas id="myCanvas" width="480" height="320"></canvas>
 
     <script>
+        //EVERYTHING NEDS TO BE MOVED INTO APP TO BEGIN WITH THEN REMOVED AS WE SEE FIT INTO THE CORRESPONDING COMPONENTS XX
+        //canvas and ctx = canvas component
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
+        //ball radius = ball component
         var ballRadius = 10;
+        // x and y = canvas
         var x = canvas.width / 2;
         var y = canvas.height - 30;
+        // dx and dy = ball component
         var dx = 2;
         var dy = -2;
+        // paddleheight, paddleWidth and paddleX = paddle component
         var paddleHeight = 10;
         var paddleWidth = 75;
         var paddleX = (canvas.width - paddleWidth) / 2;
+        // rightPressed and leftPressed = app component
         var rightPressed = false;
         var leftPressed = false;
+        //brickRowCount, brickColumnCount, brickWidth, brickHeight, brickPadding, brickOffsetTop, brickOffsetLeft = brick component
         var brickRowCount = 5;
         var brickColumnCount = 3;
         var brickWidth = 75;
@@ -42,9 +51,10 @@
         var brickPadding = 10;
         var brickOffsetTop = 30;
         var brickOffsetLeft = 30;
+        //score and lives = app component
         var score = 0;
         var lives = 3;
-//var bricks and the two folling for loops are for Bricks component
+//var bricks and for functions = app component
         var bricks = [];
         for (var c = 0; c < brickColumnCount; c++) {
             bricks[c] = [];
@@ -52,11 +62,11 @@
                 bricks[c][r] = { x: 0, y: 0, status: 1 };
             }
         }
-//the following 3 event listeners belong in controls component
+//the following 3 event listeners = app component
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
         document.addEventListener("mousemove", mouseMoveHandler, false);
-//following 3 functions all belong in controls component
+//following 3 functions all belong in app component
         function keyDownHandler(e) {
             if (e.keyCode == 39) {
                 rightPressed = true;
@@ -79,7 +89,7 @@
                 paddleX = relativeX - paddleWidth / 2;
             }
         }
-        //collisionDetection function blongs in its own component (possibly walls)
+        //collisionDetection function blongs app component
         function collisionDetection() {
             for (var c = 0; c < brickColumnCount; c++) {
                 for (var r = 0; r < brickRowCount; r++) {
@@ -98,7 +108,7 @@
                 }
             }
         }
-//drawball function will belong to ball component
+//drawball function will belong app component
         function drawBall() {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
@@ -106,7 +116,7 @@
             ctx.fill();
             ctx.closePath();
         }
-        //drawPaddle belongs in paddle component
+        //drawPaddle belongs in app component
         function drawPaddle() {
             ctx.beginPath();
             ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
@@ -114,7 +124,7 @@
             ctx.fill();
             ctx.closePath();
         }
-        //dawBricks belongs in Bricks component
+        //dawBricks belongs in app component
         function drawBricks() {
             for (var c = 0; c < brickColumnCount; c++) {
                 for (var r = 0; r < brickRowCount; r++) {
@@ -132,7 +142,7 @@
                 }
             }
         }
-        //drawScore and drawLives belongs in scoring component
+        //drawScore and drawLives belong in app component
         function drawScore() {
             ctx.font = "16px Arial";
             ctx.fillStyle = "#0095DD";
