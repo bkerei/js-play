@@ -32,8 +32,6 @@ Purple Pizzazz	#FF00CC */
 
 
 
-
-
 /* Good JS animations to use for text:
 
 STROBE (for text)
@@ -43,15 +41,9 @@ Stars (for the background)
 
 
 
-
-
-
 Links to other JS/CSS animations:
 
 https://codemyui.com/neon-text-flickering-effect/
-
-
-
 
 
 
@@ -71,51 +63,6 @@ font-family: 'Stylish', sans-serif;
 Yesteryear:
 <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet"> 
 font-family: 'Yesteryear', cursive;
-
-
-
-
-
-
-
-
-Marquee: Scrolling Text
-
-
--moz-transform:translateX(100%);
--webkit-transform:translateX(100%);	
-transform:translateX(100%);
-
--moz-animation: example1 15s linear infinite;
--webkit-animation: example1 15s linear infinite;
-animation: example1 15s linear infinite;
-}
-
-@-moz-keyframes example1 {
-0%   { -moz-transform: translateX(100%); }
-100% { -moz-transform: translateX(-100%); }
-}
-
-@-webkit-keyframes example1 {
-0%   { -webkit-transform: translateX(100%); }
-100% { -webkit-transform: translateX(-100%); }
-}
-
-@keyframes example1 {
-0%   { 
--moz-transform: translateX(100%);
--webkit-transform: translateX(100%);
-transform: translateX(100%); 		
-}
-
-100% { 
--moz-transform: translateX(-100%);
--webkit-transform: translateX(-100%);
-transform: translateX(-100%); 
-}
-}
-
-
 
 
 
