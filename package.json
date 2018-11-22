@@ -1,0 +1,9 @@
+{
+  "name": "js-play",
+  "version": "1.0.0",
+  "description": "Basic blockbreaker in React/JS/Redux",
+  "main": "index.js",
+  "repository": "https://github.com/bkerei/js-play.git",
+  "author": "Bobbi, Ruby, Brandon",
+  "license": "MIT"
+}
